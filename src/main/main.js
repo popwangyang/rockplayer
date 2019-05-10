@@ -149,7 +149,7 @@ function createWindow() {
     mainWindow.loadFile(INDEX_HTML)
     currentLoadFile = INDEX_HTML;
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

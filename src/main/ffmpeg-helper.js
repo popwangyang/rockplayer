@@ -1,6 +1,6 @@
 'use strict';
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffprobePath = require('@ffprobe-installer/ffprobe').path;
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path; // 获取fluent-ffmpeg主题模块
+const ffprobePath = require('@ffprobe-installer/ffprobe').path; // 获取 ffprobe模块
 const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
 ffmpeg.setFfprobePath(ffprobePath);

@@ -56,12 +56,12 @@ export default class VideoServer {
                 this.killFfmpegCommand();
                 this._ffmpegCommand = ffmpeg()
                     .input(this.videoSourceInfo.videoSourcePath)
-                    .nativeFramerate()
+                    .nativeFramerate() // 以本机帧速率读取输入
                     .videoCodec(videoCodec)
                     .audioCodec(audioCodec)
                     .format('mp4')
                     .seekInput(startTime)
-                    .outputOptions('-movflags', 'frag_keyframe+empty_moov')
+                    .outputOptions('-movflags', 'frag_keyframe+empty_moov') // 转换x264到Fragmented MP4格式
                     .on('progress', function (progress) {
                         console.log('time: ' + progress.timemark);
                     })
